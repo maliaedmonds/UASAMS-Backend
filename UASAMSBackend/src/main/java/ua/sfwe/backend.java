@@ -1,3 +1,4 @@
+package main.java.ua.sfwe;
 import java.util.InputMismatchException;
 import java.util.Scanner; //this will be used to read in test data 
 

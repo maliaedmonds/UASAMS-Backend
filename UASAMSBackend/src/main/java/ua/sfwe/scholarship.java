@@ -1,3 +1,4 @@
+package main.java.ua.sfwe;
 public class scholarship {
     private String scholarshipName;
     private int payout;

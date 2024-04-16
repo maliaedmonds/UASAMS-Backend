@@ -1,3 +1,4 @@
+package main.java.ua.sfwe;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class userDatabase {
