@@ -3,7 +3,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner; //this will be used to read in test data 
 
 
-public class backend {
+public class Backend {
+    
     ////Testing classes////
     public void printTestMenu(){
         System.out.println("Menu:");
@@ -37,7 +38,7 @@ public class backend {
     ////Testing classes////
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); //This creates a scanner object to read in test data
-        backend app = new backend(); //This creates an instance of the backend class
+        Backend app = new Backend(); //This creates an instance of the backend class
         UserDatabase userData = new UserDatabase();
         scholarshipDatabase scholarshipData = new scholarshipDatabase();
         //This creates an object of each of our databases
@@ -59,9 +60,9 @@ public class backend {
         System.out.print("To start using the system type 'Login':");
         String userStartInput = input.nextLine(); 
         while(exit == false){
-            if(userStartInput.equals("Login")){
+            if("Login".equals(userStartInput)){
                 break;
-            } //This is like a makeshift start menu
+            } 
             else{
                 System.out.print("\nTo start using the system type 'Login':");
                 userStartInput = input.nextLine(); 
@@ -80,7 +81,7 @@ public class backend {
                     exit = true; //This will exit the loop on the next iteration
                 }
                 else if(appAction == 1){ //This will be used for testing the user database
-                    if(currentUser.getUserPermission().equals("admin")){ //This is guarded by the admin permission since only admins are allowed to work with user accounts
+                    if("admin".equals(currentUser.getUserPermission())){ //This is guarded by the admin permission since only admins are allowed to work with user accounts
                         app.databaseTestMenu();
                         System.out.print("Enter a number to select an option: ");
                         databaseAction = input.nextInt(); //This reads in the user's option
@@ -112,7 +113,7 @@ public class backend {
                     }
                 }
                 else if(appAction == 2){ //This will be used for testing the scholarship database
-                    if(currentUser.getUserPermission().equals("donor")){ //Only donors can create scholarships
+                    if("donor".equals(currentUser.getUserPermission())){ //Only donors can create scholarships
                         app.databaseTestMenu();
                         System.out.print("Enter a number to select an option: ");
                         databaseAction = input.nextInt(); //This reads in the user's option
@@ -145,7 +146,7 @@ public class backend {
                     }
                 }
                 else if(appAction == 3){ //Student applies to scholarship
-                   if(currentUser.getUserPermission().equals("student")){
+                   if("student".equals(currentUser.getUserPermission())){
                         app.applicationTestMenu();
                         System.out.print("Enter a number to select an option: ");
                         int action = input.nextInt(); //This reads in the user's option
@@ -174,7 +175,7 @@ public class backend {
                    }
                 }
                 else if(appAction == 4){
-                    if(currentUser.getUserPermission().equals("student") || currentUser.getUserPermission().equals("reviewer") || currentUser.getUserPermission().equals("admin")){
+                    if("student".equals(currentUser.getUserPermission()) || "reviewer".equals(currentUser.getUserPermission()) ||"admin".equals(currentUser.getUserPermission())){
                         //This check the user permission we allow admins to do everything
                         scholarship foundScholarship;
                         System.out.print("Enter the name of the scholarship you would like to search for: ");
@@ -193,25 +194,25 @@ public class backend {
                     }
                 }
                 else if(appAction == 5){ //Search user by name
-                    if(currentUser.getUserPermission().equals("admin")){
+                    if("currentUser.getUserPermission()".equals("admin")){
                         user foundUser;
                         System.out.println("Enter the name of the user you would like to search for: ");
                         String userName = input.nextLine(); //This reads in the user's option
                         foundUser = userData.searchByName(userName);
                         if(foundUser != null){
-                            if(foundUser.getUserPermission().equals("admin")){
+                            if("admin".equals(foundUser.getUserPermission())){
                                 Admin foundAdmin = (Admin) foundUser;
                                 foundAdmin.printInfo();
                             }
-                            else if(foundUser.getUserPermission().equals("donor")){
+                            else if("donor".equals(foundUser.getUserPermission())){
                                 donor foundDonor = (donor) foundUser;
                                 foundDonor.printInfo();
                             }
-                            else if(foundUser.getUserPermission().equals("reviewer")){
+                            else if("reviewer".equals(foundUser.getUserPermission())){
                                 reviewer foundReviewer = (reviewer) foundUser;
                                 foundReviewer.printInfo();
                             }
-                            else if(foundUser.getUserPermission().equals("student")){
+                            else if("student".equals(foundUser.getUserPermission())){
                                 student foundStudent = (student) foundUser;
                                 foundStudent.printInfo();
                             }
@@ -240,7 +241,7 @@ public class backend {
                     }
                 }
                 else if(appAction == 7){
-                    if(currentUser.getUserPermission().equals("student")){
+                    if("student".equals(currentUser.getUserPermission())){
                         System.out.print("Enter the name of the scholarship you would like to archive (For testing purposes): ");
                         String scholarshipName = input.nextLine(); //This reads in the user's option
                         scholarship foundScholarship = scholarshipData.searchByName(scholarshipName);
@@ -275,5 +276,6 @@ public class backend {
         }
         System.out.println("\n********** Thank you for using the UArizona Scholarship Application Management System. **********\n");
         input.close(); //This closes the scanner object
+
     }
 }
