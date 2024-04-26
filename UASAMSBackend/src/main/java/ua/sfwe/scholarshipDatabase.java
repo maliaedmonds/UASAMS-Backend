@@ -1,4 +1,4 @@
-package main.java.ua.sfwe;
+package ua.sfwe;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class scholarshipDatabase {

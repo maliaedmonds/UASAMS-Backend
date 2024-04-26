@@ -1,6 +1,8 @@
 package main.java.ua.sfwe;
 //This class inherits from the user class
 import java.util.Scanner;
+
+import ua.sfwe.student;
 public class Admin extends user{
     private String adminID;
 

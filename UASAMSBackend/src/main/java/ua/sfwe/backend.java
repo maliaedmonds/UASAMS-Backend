@@ -1,6 +1,8 @@
-package main.java.ua.sfwe;
+package ua.sfwe;
 import java.util.InputMismatchException;
 import java.util.Scanner; //this will be used to read in test data 
+
+import main.java.ua.sfwe.Admin;
 
 public class backend {
     ////Testing classes////

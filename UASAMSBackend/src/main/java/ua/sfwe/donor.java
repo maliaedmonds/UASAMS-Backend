@@ -1,4 +1,4 @@
-package main.java.ua.sfwe;
+package ua.sfwe;
 //This class inherits from the user class
 
 import java.util.Scanner;

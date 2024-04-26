@@ -1,6 +1,8 @@
-package main.java.ua.sfwe;
+package ua.sfwe;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import main.java.ua.sfwe.Admin;
 public class userDatabase {
     private ArrayList <user> database; //This is our arraylist mock database
 

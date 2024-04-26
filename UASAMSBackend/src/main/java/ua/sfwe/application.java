@@ -1,4 +1,4 @@
-package main.java.ua.sfwe;
+package ua.sfwe;
 public class application {
     private String ScholarshipName;
     private String studentID;
