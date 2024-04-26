@@ -1,8 +1,8 @@
-package main.java.ua.sfwe;
+package ua.sfwe;
 //This class inherits from the user class
 import java.util.Scanner;
 
-import ua.sfwe.student;
+
 public class Admin extends user{
     private String adminID;
 
@@ -29,7 +29,7 @@ public class Admin extends user{
         System.out.print("Enter type of user (student, admin, reviewer, donor): ");
         String userPermissions = input.nextLine();
         userPermissions = userPermissions.toLowerCase(); //Converts the string to lowercase (this is used to ensure that the user can enter the type of user in any case)
-        userPermissions = userPermissions.strip(); //Removes leading and trailing whitespace
+        userPermissions = userPermissions.trim(); //Removes leading and trailing whitespace
         if(userPermissions.equals("student")){
             student newStudent = new student();
             newStudent.setUserPermission(userPermissions); //Sets the user permission
