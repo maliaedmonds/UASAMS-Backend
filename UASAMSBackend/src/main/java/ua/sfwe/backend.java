@@ -37,7 +37,7 @@ public class Backend {
 
     ////Testing classes////
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in); //This creates a scanner object to read in test data
+        
         Backend app = new Backend(); //This creates an instance of the backend class
         UserDatabase userData = new UserDatabase();
         scholarshipDatabase scholarshipData = new scholarshipDatabase();
@@ -55,7 +55,7 @@ public class Backend {
         //This creates our base admin account which will be the only account in the database at the start
         userData.addToDatabase(admin); //This adds the admin to the database since they are the first user
         currentUser = admin; //This sets the current user to the admin 
-
+        Scanner input =new Scanner(System.in);
         System.out.println("\n********** Welcome to the UArizona Scholarship Application Management System. **********\n");
         System.out.print("To start using the system type 'Login':");
         String userStartInput = input.nextLine(); 
@@ -69,7 +69,7 @@ public class Backend {
             }
         }
         System.out.println();
-
+        
         while(exit == false){ //This is our main loop
             try{
                 app.printTestMenu();
