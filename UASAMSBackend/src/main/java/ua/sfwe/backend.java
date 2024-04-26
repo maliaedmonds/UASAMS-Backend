@@ -38,7 +38,7 @@ public class backend {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); //This creates a scanner object to read in test data
         backend app = new backend(); //This creates an instance of the backend class
-        userDatabase userData = new userDatabase();
+        UserDatabase userData = new UserDatabase();
         scholarshipDatabase scholarshipData = new scholarshipDatabase();
         //This creates an object of each of our databases
         boolean exit = false; //This is used to exit the program loop once the application is ended
