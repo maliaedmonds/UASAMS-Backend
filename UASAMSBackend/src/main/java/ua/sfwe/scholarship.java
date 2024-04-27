@@ -58,7 +58,7 @@ public class scholarship {
         return scholarshipName;
     }
     public void setScholarshipName(String scholarshipName){
-        if(this.scholarshipName == "No Name"){
+        if("No Name".equals(this.scholarshipName)){
             this.scholarshipName = scholarshipName;
         }
         else{

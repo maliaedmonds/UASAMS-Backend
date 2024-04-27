@@ -1,17 +1,18 @@
 package ua.sfwe;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class UserDatabase {
  
-    private ArrayList <User> database; //This is our arraylist mock database
+    private List <User> database; //This is our arraylist mock database
 
     public UserDatabase(){ //This is the default constructor
         this.database = new ArrayList<>();
     }
     ///// Start Overloaded constructors for the userDatabase class /////
-    public UserDatabase(ArrayList <User> database){
+    public UserDatabase(List <User> database){
         this.database = database;
     }
     ///// End Overloaded constructors for the userDatabase class /////
