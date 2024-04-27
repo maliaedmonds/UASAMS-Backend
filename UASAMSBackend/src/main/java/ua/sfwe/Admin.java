@@ -31,13 +31,8 @@ public class Admin extends User{
         String userPermissions = input.nextLine();
         userPermissions = userPermissions.toLowerCase(Locale.ROOT); //Converts the string to lowercase (this is used to ensure that the user can enter the type of user in any case)
         userPermissions = userPermissions.trim(); //Removes leading and trailing whitespace
-<<<<<<< HEAD
         if("student".equals(userPermissions)){
-            student newStudent = new student();
-=======
-        if(userPermissions.equals("student")){
             Student newStudent = new Student();
->>>>>>> 0b13a12124d3fb035728aa5918c8d49df5c68fa3
             newStudent.setUserPermission(userPermissions); //Sets the user permission
             setBasicInfo(newStudent, input); 
             setStudentInfo(newStudent, input);
@@ -93,7 +88,7 @@ public class Admin extends User{
         return inputUser;
     }
 
-    private student setStudentInfo(Student inputStudent, Scanner input) {
+    private Student setStudentInfo(Student inputStudent, Scanner input) {
         System.out.println("\nEnter major (ex. Software Engineering): ");
         String major = input.nextLine();
         inputStudent.setMajor(major);

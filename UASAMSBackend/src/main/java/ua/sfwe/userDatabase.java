@@ -40,13 +40,8 @@ public class UserDatabase {
                     deleted = true;
                 }
             }
-<<<<<<< HEAD
             else if("student".equals(userType)){
-                student studentUser = (student) foundUser; //Typecast to student child class
-=======
-            else if(userType.equals("student")){
                 Student studentUser = (Student) foundUser; //Typecast to student child class
->>>>>>> 0b13a12124d3fb035728aa5918c8d49df5c68fa3
                 if(studentUser.getStudentID().equals(iD)){
                     database.remove(i);
                     deleted = true;
@@ -101,13 +96,8 @@ public class UserDatabase {
                     found = true;
                 }
             }
-<<<<<<< HEAD
             else if("student".equals(userType)){
-                student studentUser = (student) foundUser; //Typecast to student child class
-=======
-            else if(userType.equals("student")){
                 Student studentUser = (Student) foundUser; //Typecast to student child class
->>>>>>> 0b13a12124d3fb035728aa5918c8d49df5c68fa3
                 if(studentUser.getStudentID().equals(iD)){
                     int userChoice = 1;
                     updateUserMenu();

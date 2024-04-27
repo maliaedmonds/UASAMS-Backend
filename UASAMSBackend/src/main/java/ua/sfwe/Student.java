@@ -1,11 +1,9 @@
+package ua.sfwe;
+
 import java.util.ArrayList;
 import java.util.Scanner; //this will be used to read in test data
 //This student class inherits from the user class
-<<<<<<< HEAD:UASAMSBackend/src/main/java/ua/sfwe/student.java
-public class student extends User{
-=======
-public class Student extends user{
->>>>>>> 0b13a12124d3fb035728aa5918c8d49df5c68fa3:UASAMSBackend/src/main/java/ua/sfwe/Student.java
+public class Student extends User{
     private String major;
     private double gpa;
     private String studentID; 
@@ -198,7 +196,7 @@ public class Student extends user{
         }
         System.out.println(); //Print and extra new line for formatting
         System.out.println("Submitted Applications:");
-        for(application i : submittedApplications){
+        for(Application i : submittedApplications){
             System.out.println(i.getScholarshipName());
         }
         System.out.println(); //Print and extra new line for formatting
@@ -235,15 +233,9 @@ public class Student extends user{
     }
 
     public void updateSavedApplications(String scholarshipName, Scanner scnr){
-<<<<<<< HEAD:UASAMSBackend/src/main/java/ua/sfwe/student.java
-        for(int i = 0; i < this.submittedApplications.size(); i++){
-            if(this.submittedApplications.get(i).getScholarshipName() == scholarshipName){
-                Application toEdit = this.submittedApplications.get(i);
-=======
-        for(application i : submittedApplications){
+        for(Application i : submittedApplications){
             if(i.getScholarshipName() == scholarshipName){
-                application toEdit = i;
->>>>>>> 0b13a12124d3fb035728aa5918c8d49df5c68fa3:UASAMSBackend/src/main/java/ua/sfwe/Student.java
+                Application toEdit = i;
                 System.out.println("Previously saved application for scholarship '" + scholarshipName + "': ");
                 System.out.println(i.getScholarshipResponses());
                 System.out.println("Please enter your responses to the following questions (seperated by commas): ");
