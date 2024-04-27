@@ -152,7 +152,7 @@ public class Backend {
                         int action = input.nextInt(); //This reads in the user's option
                         input.nextLine(); //This is used to clear the scanner buffer
                         if(action == 1){ //New application to a scholarship
-                            student currentStudent = (student) currentUser; //Need to typcast the current user to a student
+                            Student currentStudent = (Student) currentUser; //Need to typcast the current user to a student
                             System.out.print("Enter the name of the scholarship you would like to apply to: ");
                             String scholarshipName = input.nextLine(); //This reads in the user's option
                             scholarship returned = scholarshipData.searchByName(scholarshipName);
@@ -160,7 +160,7 @@ public class Backend {
                             System.out.println();
                         }
                         else if(action == 2){ //Edit a previously submitted application
-                            student currentStudent = (student) currentUser; //Need to typcast the current user to a student
+                            Student currentStudent = (Student) currentUser; //Need to typcast the current user to a student
                             System.out.print("Enter the name of the scholarship you would like to edit: ");
                             String scholarshipName = input.nextLine(); //This reads in the user's option
                             currentStudent.updateSavedApplications(scholarshipName, input);
@@ -213,7 +213,7 @@ public class Backend {
                                 foundReviewer.printInfo();
                             }
                             else if("student".equals(foundUser.getUserPermission())){
-                                student foundStudent = (student) foundUser;
+                                Student foundStudent = (Student) foundUser;
                                 foundStudent.printInfo();
                             }
                             else{
@@ -245,7 +245,7 @@ public class Backend {
                         System.out.print("Enter the name of the scholarship you would like to archive (For testing purposes): ");
                         String scholarshipName = input.nextLine(); //This reads in the user's option
                         scholarship foundScholarship = scholarshipData.searchByName(scholarshipName);
-                        student currentStudent = (student) currentUser; //Need to typcast the current user to a student
+                        Student currentStudent = (Student) currentUser; //Need to typcast the current user to a student
                         if(foundScholarship != null){
                             currentStudent.archiveAwardedScholarship(foundScholarship); //This tests the archival function for a scholarship
                         }

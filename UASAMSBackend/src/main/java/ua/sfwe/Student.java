@@ -1,8 +1,11 @@
-package ua.sfwe;
 import java.util.ArrayList;
 import java.util.Scanner; //this will be used to read in test data
 //This student class inherits from the user class
+<<<<<<< HEAD:UASAMSBackend/src/main/java/ua/sfwe/student.java
 public class student extends User{
+=======
+public class Student extends user{
+>>>>>>> 0b13a12124d3fb035728aa5918c8d49df5c68fa3:UASAMSBackend/src/main/java/ua/sfwe/Student.java
     private String major;
     private double gpa;
     private String studentID; 
@@ -16,7 +19,7 @@ public class student extends User{
 
     
 
-    public student(){//This is the default constructor for the student class
+    public Student(){//This is the default constructor for the student class
         this.major = "None";
         this.gpa = 0.0;
         this.studentID = "None";
@@ -29,7 +32,7 @@ public class student extends User{
         submittedApplications = new ArrayList<>(); //This will store the application objects that each student submits
     }
     ////// Overloaded constructors for the student class //////
-    public student(String major){
+    public Student(String major){
         this.major = major;
         this.gpa = 0.0;
         this.studentID = "None";
@@ -41,7 +44,7 @@ public class student extends User{
         awardedScholarships = new ArrayList<>(); //This will store the scholarship objects that each student is awarded
         submittedApplications = new ArrayList<>(); //This will store the application objects that each student submits
     }
-    public student(String major, double gpa){
+    public Student(String major, double gpa){
         this.major = major;
         this.gpa = gpa;
         this.studentID = "None";
@@ -53,7 +56,7 @@ public class student extends User{
         awardedScholarships = new ArrayList<>(); //This will store the scholarship objects that each student is awarded
         submittedApplications = new ArrayList<>(); //This will store the application objects that each student submits
     }   
-    public student(String major, double gpa, String studentID){
+    public Student(String major, double gpa, String studentID){
         this.major = major;
         this.gpa = gpa;
         this.studentID = studentID;
@@ -65,7 +68,7 @@ public class student extends User{
         awardedScholarships = new ArrayList<>(); //This will store the scholarship objects that each student is awarded
         submittedApplications = new ArrayList<>(); //This will store the application objects that each student submits
     }
-    public student(String major, double gpa, String studentID, String citizenship){
+    public Student(String major, double gpa, String studentID, String citizenship){
         this.major = major;
         this.gpa = gpa;
         this.studentID = studentID;
@@ -77,7 +80,7 @@ public class student extends User{
         awardedScholarships = new ArrayList<>(); //This will store the scholarship objects that each student is awarded
         submittedApplications = new ArrayList<>(); //This will store the application objects that each student submits
     }
-    public student(String major, double gpa, String studentID, String citizenship, int unitsEnrolled){
+    public Student(String major, double gpa, String studentID, String citizenship, int unitsEnrolled){
         this.major = major;
         this.gpa = gpa;
         this.studentID = studentID;
@@ -89,7 +92,7 @@ public class student extends User{
         awardedScholarships = new ArrayList<>(); //This will store the scholarship objects that each student is awarded
         submittedApplications = new ArrayList<>(); //This will store the application objects that each student submits
     }
-    public student(String major, double gpa, String studentID, String citizenship, int unitsEnrolled, String expectedGraduation){
+    public Student(String major, double gpa, String studentID, String citizenship, int unitsEnrolled, String expectedGraduation){
         this.major = major;
         this.gpa = gpa;
         this.studentID = studentID;
@@ -101,7 +104,7 @@ public class student extends User{
         awardedScholarships = new ArrayList<>(); //This will store the scholarship objects that each student is awarded
         submittedApplications = new ArrayList<>(); //This will store the application objects that each student submits
     }
-    public student(String major, double gpa, String studentID, String citizenship, int unitsEnrolled, String expectedGraduation, String essayResponses){
+    public Student(String major, double gpa, String studentID, String citizenship, int unitsEnrolled, String expectedGraduation, String essayResponses){
         this.major = major;
         this.gpa = gpa;
         this.studentID = studentID;
@@ -113,7 +116,7 @@ public class student extends User{
         awardedScholarships = new ArrayList<>(); //This will store the scholarship objects that each student is awarded
         submittedApplications = new ArrayList<>(); //This will store the application objects that each student submits
     }
-    public student(String major, double gpa, String studentID, String citizenship, int unitsEnrolled, String expectedGraduation, String essayResponses, String bursarAccountReference){
+    public Student(String major, double gpa, String studentID, String citizenship, int unitsEnrolled, String expectedGraduation, String essayResponses, String bursarAccountReference){
         this.major = major;
         this.gpa = gpa;
         this.studentID = studentID;
@@ -190,13 +193,13 @@ public class student extends User{
         System.out.println("Essay Responses: " + this.essayResponses); 
         System.out.println("Bursar Account Reference: " + this.bursarAccountReference);
         System.out.println("Awarded Scholarships: ");
-        for(int i = 0; i < this.awardedScholarships.size(); i++){
-            System.out.println(this.awardedScholarships.get(i).getScholarshipName());
+        for(scholarship i : awardedScholarships){
+            System.out.println(i.getScholarshipName());
         }
         System.out.println(); //Print and extra new line for formatting
         System.out.println("Submitted Applications:");
-        for(int i = 0; i < this.submittedApplications.size(); i++){
-            System.out.println(this.submittedApplications.get(i).getScholarshipName());
+        for(application i : submittedApplications){
+            System.out.println(i.getScholarshipName());
         }
         System.out.println(); //Print and extra new line for formatting
     }
@@ -222,7 +225,7 @@ public class student extends User{
         newApplication.setScholarshipResponses(scholarshipResponses);
         System.out.print("Would you like to submit your application? (y/n):");
         String submitApplication = scnr.nextLine();
-        if(submitApplication.equals("y")){
+        if("y".equals(submitApplication)){
             this.submittedApplications.add(newApplication);
             System.out.println("Application submitted");
         }
@@ -232,16 +235,22 @@ public class student extends User{
     }
 
     public void updateSavedApplications(String scholarshipName, Scanner scnr){
+<<<<<<< HEAD:UASAMSBackend/src/main/java/ua/sfwe/student.java
         for(int i = 0; i < this.submittedApplications.size(); i++){
             if(this.submittedApplications.get(i).getScholarshipName() == scholarshipName){
                 Application toEdit = this.submittedApplications.get(i);
+=======
+        for(application i : submittedApplications){
+            if(i.getScholarshipName() == scholarshipName){
+                application toEdit = i;
+>>>>>>> 0b13a12124d3fb035728aa5918c8d49df5c68fa3:UASAMSBackend/src/main/java/ua/sfwe/Student.java
                 System.out.println("Previously saved application for scholarship '" + scholarshipName + "': ");
-                System.out.println(this.submittedApplications.get(i).getScholarshipResponses());
+                System.out.println(i.getScholarshipResponses());
                 System.out.println("Please enter your responses to the following questions (seperated by commas): ");
                 String studentAnswers = scnr.nextLine();
                 System.out.println("Would you like to save the changes to your application? (y/n):");
                 String saveApplication = scnr.nextLine();
-                if(saveApplication.equals("y")){
+                if("y".equals(saveApplication)){
                     toEdit.setScholarshipResponses(studentAnswers);
                     System.out.println("Application saved");
                 }
