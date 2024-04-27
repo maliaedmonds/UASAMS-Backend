@@ -41,7 +41,7 @@ public class UserDatabase {
                 }
             }
             else if(userType.equals("student")){
-                student studentUser = (student) foundUser; //Typecast to student child class
+                Student studentUser = (Student) foundUser; //Typecast to student child class
                 if(studentUser.getStudentID().equals(iD)){
                     database.remove(i);
                     deleted = true;
@@ -97,7 +97,7 @@ public class UserDatabase {
                 }
             }
             else if(userType.equals("student")){
-                student studentUser = (student) foundUser; //Typecast to student child class
+                Student studentUser = (Student) foundUser; //Typecast to student child class
                 if(studentUser.getStudentID().equals(iD)){
                     int userChoice = 1;
                     updateUserMenu();
@@ -159,7 +159,7 @@ public class UserDatabase {
                 foundReviewer.printInfo();
             }
             else if(database.get(i).getUserPermission().equals("student")){
-                student foundStudent = (student) database.get(i);
+                Student foundStudent = (Student) database.get(i);
                 foundStudent.printInfo();
             }
             else{
@@ -184,7 +184,7 @@ public class UserDatabase {
                 }
             }
             else if(database.get(i).getUserPermission().equals("student")){
-                student studentUser = (student) database.get(i); //Typecast to student child class
+                Student studentUser = (Student) database.get(i); //Typecast to student child class
                 if(studentUser.getStudentID().equals(inputID)){
                     return (user) studentUser;
                 }
@@ -295,7 +295,7 @@ public class UserDatabase {
         }
     }
 
-    private void updateStudent(student studentUser, int userChoice, Scanner input){
+    private void updateStudent(Student studentUser, int userChoice, Scanner input){
         if(userChoice == 1){ //Name
             System.out.print("Enter new name: ");
             String newName = input.nextLine();
