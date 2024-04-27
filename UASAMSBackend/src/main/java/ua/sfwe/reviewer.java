@@ -1,6 +1,6 @@
 package ua.sfwe;
 //This inherits from the user class
-public class reviewer extends user{
+public class reviewer extends User{
     private String reviewerID;
     
     public reviewer(){ //Default constructor

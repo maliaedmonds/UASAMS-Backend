@@ -3,7 +3,7 @@ package ua.sfwe;
 
 import java.util.Scanner;
 
-public class donor extends user{
+public class donor extends User{
     private String bursarAccountReference;
     private String donorID;
 

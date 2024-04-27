@@ -2,7 +2,7 @@ package ua.sfwe;
 import java.util.ArrayList;
 import java.util.Scanner; //this will be used to read in test data
 //This student class inherits from the user class
-public class student extends user{
+public class student extends User{
     private String major;
     private double gpa;
     private String studentID; 
@@ -12,7 +12,7 @@ public class student extends user{
     private String essayResponses; 
     private String bursarAccountReference;
     private ArrayList <scholarship> awardedScholarships; //This will store the scholarship objects that each student is awarded
-    private ArrayList <application> submittedApplications; //This will store the application objects that each student submits
+    private ArrayList <Application> submittedApplications; //This will store the application objects that each student submits
 
     
 
@@ -207,7 +207,7 @@ public class student extends user{
     }
 
     public void applyForScholarship(scholarship inputScholarship, Scanner scnr){ //Maybe archive this somewhere
-        application newApplication = new application();
+        Application newApplication = new Application();
         newApplication.setScholarshipName(inputScholarship.getScholarshipName());
         newApplication.setStudentID(this.studentID);
         System.out.print("Please enter the academic year you are applying for (i.e 2023-2024): ");
@@ -234,7 +234,7 @@ public class student extends user{
     public void updateSavedApplications(String scholarshipName, Scanner scnr){
         for(int i = 0; i < this.submittedApplications.size(); i++){
             if(this.submittedApplications.get(i).getScholarshipName() == scholarshipName){
-                application toEdit = this.submittedApplications.get(i);
+                Application toEdit = this.submittedApplications.get(i);
                 System.out.println("Previously saved application for scholarship '" + scholarshipName + "': ");
                 System.out.println(this.submittedApplications.get(i).getScholarshipResponses());
                 System.out.println("Please enter your responses to the following questions (seperated by commas): ");

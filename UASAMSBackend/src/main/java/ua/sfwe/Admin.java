@@ -1,9 +1,10 @@
 package ua.sfwe;
+import java.util.Locale;
 //This class inherits from the user class
 import java.util.Scanner;
 
 
-public class Admin extends user{
+public class Admin extends User{
     private String adminID;
 
     public Admin(){ //Default constructor
@@ -25,42 +26,42 @@ public class Admin extends user{
     }
     ///// End Getters and Setters for the Admin class /////
 
-    public user createAccount(Scanner input){ 
+    public User createAccount(Scanner input){ 
         System.out.print("Enter type of user (student, admin, reviewer, donor): ");
         String userPermissions = input.nextLine();
-        userPermissions = userPermissions.toLowerCase(); //Converts the string to lowercase (this is used to ensure that the user can enter the type of user in any case)
+        userPermissions = userPermissions.toLowerCase(Locale.ROOT); //Converts the string to lowercase (this is used to ensure that the user can enter the type of user in any case)
         userPermissions = userPermissions.trim(); //Removes leading and trailing whitespace
-        if(userPermissions.equals("student")){
+        if("student".equals(userPermissions)){
             student newStudent = new student();
             newStudent.setUserPermission(userPermissions); //Sets the user permission
             setBasicInfo(newStudent, input); 
             setStudentInfo(newStudent, input);
             System.out.println(); //Print a new line before the menu comes back up
-            return (user) newStudent;
+            return (User) newStudent;
         }
-        else if(userPermissions.equals("admin")){
+        else if("admin".equals(userPermissions)){
             Admin newAdmin = new Admin();
             newAdmin.setUserPermission(userPermissions); //Sets the user permission
             setBasicInfo(newAdmin, input);
             setAdminInfo(newAdmin, input);
             System.out.println(); //Print a new line before the menu comes back up
-            return (user) newAdmin;
+            return (User) newAdmin;
         }
-        else if(userPermissions.equals("donor")){
+        else if("donor".equals(userPermissions)){
             donor newDonor = new donor();
             newDonor.setUserPermission(userPermissions); //Sets the user permission
             setBasicInfo(newDonor, input);
             setDonorInfo(newDonor, input);
             System.out.println(); //Print a new line before the menu comes back up
-            return (user) newDonor;
+            return (User) newDonor;
         }
-        else if(userPermissions.equals("reviewer")){
+        else if("reviewer".equals(userPermissions)){
             reviewer newReviewer = new reviewer();
             newReviewer.setUserPermission(userPermissions);  //Sets the user permission
             setBasicInfo(newReviewer, input);
             setReviewerInfo(newReviewer, input);
             System.out.println(); //Print a new line before the menu comes back up
-            return (user) newReviewer;
+            return (User) newReviewer;
         }
         else{
             System.out.println("Invalid user type. Please try again.");
@@ -69,7 +70,7 @@ public class Admin extends user{
     }
 
 
-    private user setBasicInfo(user inputUser, Scanner input){
+    private User setBasicInfo(User inputUser, Scanner input){
         System.out.println("\nEnter name (ex. John Doe): ");
         String name = input.nextLine();
         inputUser.setName(name);

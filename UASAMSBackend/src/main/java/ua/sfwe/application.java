@@ -1,51 +1,51 @@
 package ua.sfwe;
-public class application {
-    private String ScholarshipName;
+public class Application {
+    private String scholarshipName;
     private String studentID;
     private String scholarshipResponses;
     private String academicYear;
 
-    public application(){
-        this.ScholarshipName = "None";
+    public Application(){
+        this.scholarshipName = "None";
         this.studentID = "None";
         this.scholarshipResponses = "None";
         this.academicYear = "None";
     }
 
-    public application(String ScholarshipName){
-        this.ScholarshipName = ScholarshipName;
+    public Application(String scholarshipName){
+        this.scholarshipName = scholarshipName;
         this.studentID = "None";
         this.scholarshipResponses = "None";
         this.academicYear = "None";
     }
 
-    public application(String ScholarshipName, String studentID){
-        this.ScholarshipName = ScholarshipName;
+    public Application(String scholarshipName, String studentID){
+        this.scholarshipName = scholarshipName;
         this.studentID = studentID;
         this.scholarshipResponses = "None";
         this.academicYear = "None";
     }
 
-    public application(String ScholarshipName, String studentID, String scholarshipResponses){
-        this.ScholarshipName = ScholarshipName;
+    public Application(String scholarshipName, String studentID, String scholarshipResponses){
+        this.scholarshipName = scholarshipName;
         this.studentID = studentID;
         this.scholarshipResponses = scholarshipResponses;
         this.academicYear = "None";
     }
 
-    public application(String ScholarshipName, String studentID, String scholarshipResponses, String academicYear){
-        this.ScholarshipName = ScholarshipName;
+    public Application(String scholarshipName, String studentID, String scholarshipResponses, String academicYear){
+        this.scholarshipName = scholarshipName;
         this.studentID = studentID;
         this.scholarshipResponses = scholarshipResponses;
         this.academicYear = academicYear;
     }
 
     public String getScholarshipName(){
-        return ScholarshipName;
+        return scholarshipName;
     }
 
-    public void setScholarshipName(String ScholarshipName){
-        this.ScholarshipName = ScholarshipName;
+    public void setScholarshipName(String scholarshipName){
+        this.scholarshipName = scholarshipName;
     }
 
     public String getStudentID(){
@@ -73,7 +73,7 @@ public class application {
     }
 
     public void printInfo(){
-        System.out.println("Scholarship Name: " + this.ScholarshipName);
+        System.out.println("Scholarship Name: " + this.scholarshipName);
         System.out.println("Student ID: " + this.studentID);
         System.out.println("Scholarship Responses: " + this.scholarshipResponses);
     }

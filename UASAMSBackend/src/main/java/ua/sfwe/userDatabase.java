@@ -5,18 +5,18 @@ import java.util.Scanner;
 
 public class UserDatabase {
  
-    private ArrayList <user> database; //This is our arraylist mock database
+    private ArrayList <User> database; //This is our arraylist mock database
 
     public UserDatabase(){ //This is the default constructor
         this.database = new ArrayList<>();
     }
     ///// Start Overloaded constructors for the userDatabase class /////
-    public UserDatabase(ArrayList <user> database){
+    public UserDatabase(ArrayList <User> database){
         this.database = database;
     }
     ///// End Overloaded constructors for the userDatabase class /////
     
-    public void addToDatabase(user newUser){ 
+    public void addToDatabase(User newUser){ 
         database.add(newUser); //This adds a new scholarship to the database
     }
 
@@ -25,29 +25,29 @@ public class UserDatabase {
         boolean deleted = false; //This is a boolean to check if the user was deleted
         for (int i = 0; i < database.size(); i++) { //This loops through the database
             String userType = database.get(i).getUserPermission(); //This gets the user type
-            user foundUser = database.get(i);  //This gets the user in the database
-            if(userType.equals("admin")){
+            User foundUser = database.get(i);  //This gets the user in the database
+            if("admin".equals(userType)){
                 Admin adminUser = (Admin) foundUser; //Typecast to admin child class
                 if(adminUser.getAdminID().equals(iD)){
                     database.remove(i);
                     deleted = true;
                 }
             }
-            else if(userType.equals("reviewer")){
+            else if("reviewer".equals(userType)){
                 reviewer reviewerUser = (reviewer) foundUser; //Typecast to reviewer child class
                 if(reviewerUser.getReviewerID().equals(iD)){
                     database.remove(i);
                     deleted = true;
                 }
             }
-            else if(userType.equals("student")){
+            else if("student".equals(userType)){
                 student studentUser = (student) foundUser; //Typecast to student child class
                 if(studentUser.getStudentID().equals(iD)){
                     database.remove(i);
                     deleted = true;
                 }
             }
-            else if(userType.equals("donor")){
+            else if("donor".equals(userType)){
                 donor donorUser = (donor) foundUser; //Typecast to donor child class
                 if(donorUser.getDonorID().equals(iD)){
                     database.remove(i);
@@ -71,8 +71,8 @@ public class UserDatabase {
         boolean found = false; //This is a boolean to check if the user was found
         for(int i = 0; i < database.size(); i++){
             String userType = database.get(i).getUserPermission(); //This gets the user type
-            user foundUser = database.get(i);  //This gets the user in the database
-            if(userType.equals("admin")){
+            User foundUser = database.get(i);  //This gets the user in the database
+            if("admin".equals(userType)){
                 Admin adminUser = (Admin) foundUser; //Typecast to admin child class
                 if(adminUser.getAdminID().equals(iD)){
                     int userChoice = 1;
@@ -84,7 +84,7 @@ public class UserDatabase {
                     found = true;
                 }
             }
-            else if(userType.equals("reviewer")){
+            else if("reviewer".equals(userType)){
                 reviewer reviewerUser = (reviewer) foundUser; //Typecast to reviewer child class
                 if(reviewerUser.getReviewerID().equals(iD)){
                     int userChoice = 1;
@@ -96,7 +96,7 @@ public class UserDatabase {
                     found = true;
                 }
             }
-            else if(userType.equals("student")){
+            else if("student".equals(userType)){
                 student studentUser = (student) foundUser; //Typecast to student child class
                 if(studentUser.getStudentID().equals(iD)){
                     int userChoice = 1;
@@ -108,7 +108,7 @@ public class UserDatabase {
                     found = true;
                 }
             }
-            else if(userType.equals("donor")){
+            else if("donor".equals(userType)){
                 donor donorUser = (donor) foundUser; //Typecast to donor child class
                 if(donorUser.getDonorID().equals(iD)){
                     int userChoice = 1;
@@ -134,7 +134,7 @@ public class UserDatabase {
     }
 
 
-    public user searchByName(String inputUser){
+    public User searchByName(String inputUser){
         for(int i = 0; i < database.size(); i++) { //This loops through the database
             if (database.get(i).getName().equals(inputUser)){ //This checks if the user is in the database
                 return database.get(i); //This returns the user
@@ -146,9 +146,9 @@ public class UserDatabase {
     public void printDatabase(){
         System.out.println("\nStart of user database records");
         for(int i = 0; i < database.size(); i++) { //This loops through the database
-            if(database.get(i).getUserPermission().equals("admin")){
+            
                 Admin foundAdmin = (Admin) database.get(i);
-                foundAdmin.printInfo();
+                foundAdmin.printInfo();if(database.get(i).getUserPermission().equals("admin")){
             }
             else if(database.get(i).getUserPermission().equals("donor")){
                 donor foundDonor = (donor) database.get(i);
@@ -169,30 +169,30 @@ public class UserDatabase {
         System.out.println("End of user database records\n");
     }
 
-    public user searchByID(String inputID){
+    public User searchByID(String inputID){
         for(int i = 0; i < database.size(); i++) { //This loops through the database
             if(database.get(i).getUserPermission().equals("admin")){
                 Admin adminUser = (Admin) database.get(i); //Typecast to admin child class
                 if(adminUser.getAdminID().equals(inputID)){
-                    return (user) adminUser;
+                    return (User) adminUser;
                 }
             }
             else if(database.get(i).getUserPermission().equals("reviewer")){
                 reviewer reviewerUser = (reviewer) database.get(i); //Typecast to reviewer child class
                 if(reviewerUser.getReviewerID().equals(inputID)){
-                    return (user) reviewerUser;
+                    return (User) reviewerUser;
                 }
             }
             else if(database.get(i).getUserPermission().equals("student")){
                 student studentUser = (student) database.get(i); //Typecast to student child class
                 if(studentUser.getStudentID().equals(inputID)){
-                    return (user) studentUser;
+                    return (User) studentUser;
                 }
             }
             else if(database.get(i).getUserPermission().equals("donor")){
                 donor donorUser = (donor) database.get(i); //Typecast to donor child class
                 if(donorUser.getDonorID().equals(inputID)){
-                    return (user) donorUser;
+                    return (User) donorUser;
                 }
             }
             else{

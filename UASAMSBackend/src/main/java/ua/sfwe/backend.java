@@ -44,7 +44,7 @@ public class Backend {
         //This creates an object of each of our databases
         boolean exit = false; //This is used to exit the program loop once the application is ended
 
-        user currentUser = new user();
+        User currentUser = new User();
         String baseAdminName = "Adimn1";
         String baseAdminPermissions = "admin"; 
         String baseAdminID = "admin1";
@@ -87,7 +87,7 @@ public class Backend {
                         databaseAction = input.nextInt(); //This reads in the user's option
                         input.nextLine(); //This is used to clear the scanner buffer
                         if(databaseAction == 1){ //add to user database
-                            user newUser = new user();
+                            User newUser = new User();
                             newUser = admin.createAccount(input);
                             userData.addToDatabase(newUser);
                         }
@@ -195,7 +195,7 @@ public class Backend {
                 }
                 else if(appAction == 5){ //Search user by name
                     if("currentUser.getUserPermission()".equals("admin")){
-                        user foundUser;
+                        User foundUser;
                         System.out.println("Enter the name of the user you would like to search for: ");
                         String userName = input.nextLine(); //This reads in the user's option
                         foundUser = userData.searchByName(userName);
