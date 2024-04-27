@@ -31,7 +31,7 @@ public class Admin extends User{
         String userPermissions = input.nextLine();
         userPermissions = userPermissions.toLowerCase(Locale.ENGLISH); //Converts the string to lowercase (this is used to ensure that the user can enter the type of user in any case)
         userPermissions = userPermissions.trim(); //Removes leading and trailing whitespace
-        if("student".equals(userPermissions)){
+        if("student".equals(userPermissions)){ 
             Student newStudent = new Student();
             newStudent.setUserPermission(userPermissions); //Sets the user permission
             setBasicInfo(newStudent, input); 
