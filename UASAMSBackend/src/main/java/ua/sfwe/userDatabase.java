@@ -151,15 +151,15 @@ public class UserDatabase {
                 Admin foundAdmin = (Admin) database.get(i);
                 foundAdmin.printInfo();if(database.get(i).getUserPermission().equals("admin")){
             }
-            else if(database.get(i).getUserPermission().equals("donor")){
+            else if("donor".equals(database.get(i).getUserPermission())){
                 donor foundDonor = (donor) database.get(i);
                 foundDonor.printInfo();
             }
-            else if(database.get(i).getUserPermission().equals("reviewer")){
+            else if("reviewer".equals(database.get(i).getUserPermission())){
                 reviewer foundReviewer = (reviewer) database.get(i);
                 foundReviewer.printInfo();
             }
-            else if(database.get(i).getUserPermission().equals("student")){
+            else if("student".equals(database.get(i).getUserPermission())){
                 Student foundStudent = (Student) database.get(i);
                 foundStudent.printInfo();
             }
